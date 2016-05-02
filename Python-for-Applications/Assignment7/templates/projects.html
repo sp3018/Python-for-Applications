@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h3>List of final project proposals</h3>
+
+<form action="" method="POST">
+    NetID <input type="text" name="netid" value=""><br>
+    Title <input type="text" name="title" value=""><br>
+    Description <input type="text" name="description" value=""><br>
+    Modules <input type="text" name="modules" value=""><br>
+    <input type="submit" value="Submit">
+</form>
+
+<table border="1" style="width:100%">
+  <tr bgcolor="grey">
+    <td>NetID</td>
+    <td>Title</td>
+  </tr>
+{% for val in project_proposals %}
+  <tr>
+    <td>{{val.netid}}</td>
+    <td>{{val.title}}</td>
+  </tr>
+{% endfor %}
+</table>
+{% endblock %}
